@@ -24,7 +24,9 @@ public class RedisAndroid  {
 
   public static void start(Context context, Bundle options) {
     String packageName = context.getPackageName();
-    String port = "6379";
+    //String port = "6379";
+    String port = "29149";
+    
     if (options != null && options.containsKey("port")) {
       port = options.get("port") + "";
     }
@@ -33,7 +35,7 @@ public class RedisAndroid  {
     //-------------------
     // General settings
     //-------------------
-    configs.putString("bind", "0.0.0.0");
+    configs.putString("bind", "0.0.0.0");// configs.putString("bind", "127.0.0.1");  ?by jia
     configs.putString("protected-mode", "yes");
     configs.putString("port", port);
 
